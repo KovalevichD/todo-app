@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Todo</title>
+	<link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i&display=swap&subset=cyrillic"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/datepicker.min.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+	<div class="center-container">
+		<header class="header">
+			<p class="header__title">To do app</p>
+		</header>
+		<main class="main-content">
+			<section class="panel-of-groups">
+				<div class="panel-of-groups__wrap">
+					<ul class="list-of-groups" id="listOfGroups"></ul>
+					<div class="panel-add-group" id="blockAddGroup">
+						<h5 class="panel-add-group__title">Please, enter a group name</h5>
+						<input type="text" class="panel-add-group__input" id="titleGroup">
+					</div>
+				</div>
+				<div class="panel-of-groups__buttons" id="panelOfGroupsButtons">
+					<span class="btn-add-group" onclick="addGroup()" id="btnAddGroup">+ Add group</span>
+					<span class="btn-delete-group" onclick="deleteGroup()" id="btnDeleteGroup">- Delete group</span>
+					<span class="btn-back-to-list-of-groups" onclick="backToListOfGroups()" id="btnBackToListOfGroups">-
+						Back</span>
+					<span class="btn-save-group" onclick="saveGroup()" id="btnSaveGroup">+ Save</span>
+					<span class="btn-save-changes-group" onclick="saveChangesGroup()" id="btnSaveChangesGroup">+ Save
+						changes</span>
+				</div>
+			</section>
+			<section class="panel-of-tasks" id="panelOfTasksSection">
+				<div class="panel-of-tasks__wrap" id="panelOfTasks">
+					<h5 class="panel-of-tasks__title" id="panelOfTasksTitle"></h5>
+					<input type="text" class="panel-of-tasks__search" placeholder="Search:" id="searchTask">
+					<span class="panel-of-tasks__btn-add-task" id="btnAddTask" onclick="addTask()">+ Add task</span>
+				</div>
+				<div class="sort-panel" id="sortPanel">
+					<button class="sort-panel__button" id="sortPanelButton">Sort by:</button>
+					<div class="sort-panel__sort-types" id="sortTypesPanel">
+						<span class="sort-type new" id="sortTypeNew" onclick="sortByNew()">New</span>
+						<span class="sort-type old" id="sortTypeOld" onclick="sortByOld()">Old</span>
+						<span class="sort-type completed" id="sortTypeСompleted"
+							onclick="sortByСompleted()">Сompleted</span>
+						<span class="sort-type unfulfilled" id="sortTypeUnfulfilled"
+							onclick="sortByUnfulfilled()">Unfulfilled</span>
+					</div>
+				</div>
+				<ul class="task-list" id="taskList"></ul>
+				<div class="panel-add-task" id="panelAddTask">
+					<div class="panel-add-task-text">
+						<span class="panel-add-task-text__title">Desrciption</span><textarea id="desrciption"
+							class="panel-add-task-text__textarea"></textarea>
+					</div>
+					<div class="panel-add-task-date-time">
+						<span class="panel-add-task-date-time__title">Date</span><input type="text"
+							class="panel-add-task-date-time__input datepicker-here" id="dateTime" data-timepicker="true"
+							data-position="bottom right" readonly="true">
+					</div>
+					<div class="panel-buttons">
+						<span class="panel-buttons__btn-save" id="btnSaveTask" onclick="saveTask()">+ Save</span>
+						<span class="panel-buttons__btn-save-changes" id="btnSaveChangesTask"
+							onclick="saveChangesTask()">+ Save changes</span>
+						<span class="panel-buttons__btn-back-to-list" id="btnBackToTaskPanel"
+							onclick="backToTaskList()">- Back</span>
+					</div>
+					<p class="panel-add-task__notice">*you can mark completed tasks. To do this, click on the
+						description of the task.</p>
+				</div>
+				<p class="panel-of-tasks__notice" id="notice">No groups selected. Please, create or select a group to
+					add a task!</p>
+			</section>
+		</main>
+	</div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/datepicker.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
